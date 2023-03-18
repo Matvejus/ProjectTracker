@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+        {% autoescape off %}
+        {{plot_div}}
+        {% endautoescape %}
+        <h3><a a href="{% url 'gantt_chart:add_task'%}">Add a new task</a></h3>
+        
+{% endblock content %}
+

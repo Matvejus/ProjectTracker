@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #my apps:
-    'gantt_chart'
+    'gantt_chart',
+    'users',
+
+    'bootstrap5',
+    #3rd party apps:
+    
 ]
 
 MIDDLEWARE = [
@@ -59,6 +64,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR /"gantt_chart"/"templates"/"gantt_chart",
+            BASE_DIR /"users"/"templates"/"registration",
         ],
         'APP_DIRS': True,
         'OPTIONS': {

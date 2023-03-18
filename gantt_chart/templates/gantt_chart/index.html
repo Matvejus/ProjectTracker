@@ -1,8 +1,13 @@
-{% extends 'base.html' %}
-{% block content %}
-        {% autoescape off %}
-        {{plot_div}}
-        {% endautoescape %}
-        
-{% endblock content %}
+{% extends "gantt_chart/base.html" %}
 
+{% block header %}
+  <div class='jumbotron'>
+      <h1>CONESU.</h1>        
+  </div>
+{% endblock header %}
+
+{% block content %}
+  <h2>
+    <a href="{% url 'users:login' %}">Log In</a>development team
+  </h2>
+{% endblock content %}

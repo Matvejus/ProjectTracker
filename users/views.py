@@ -1,13 +1,15 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import logout
 
 # Create your views here.
 
-def register(request):
+
+
+
+""" def register(request):
     if request.method != 'POST':
         form = UserCreationForm()
     else:
@@ -20,5 +22,5 @@ def register(request):
             return redirect('gantt_chart:index')
         
     context = {'form': form}    
-    return render(request, 'registration/register.html', context)
+    return render(request, 'registration/register.html', context) """
 
