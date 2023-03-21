@@ -3,7 +3,9 @@
         {% autoescape off %}
         {{plot_div}}
         {% endautoescape %}
-        <h3><a a href="{% url 'gantt_chart:add_task'%}">Add a new task</a></h3>
+        <h3><a class="btn btn-primary btn-lg" role="button" href="{% url 'gantt_chart:add_task'%} ">Add a new task</a></h3>
+        <h3><a class="btn btn-primary btn-lg" role="button" href="{% url 'gantt_chart:task_list'%} ">Edit task</a></h3>
         
 {% endblock content %}
+
 

@@ -80,19 +80,26 @@
            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
            </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'gantt_chart:chart' %}">Project Timeline</a>
+              </li>
+            </ul>
+          </div>
         {% else %}
         <a class="navbar-brand" href="{% url 'users:login'%}">CONESU</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'users:login' %}">Project Timeline</a>
+            </li>
+          </ul>
+        </div>
         {% endif %}
-           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item">
-                 <a class="nav-link active" aria-current="page" href="{% url 'gantt_chart:chart' %}">Project Timeline</a>
-               </li>
-             </ul>
-           </div>
            <ul class="nav navbar-nav navbar-right">
             {% if user.is_authenticated %}
             <li><a>Hello, {{ user.username }}! </a>&nbsp &nbsp</li>

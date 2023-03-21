@@ -1,0 +1,15 @@
+{% extends 'gantt_chart/base.html' %}
+
+{% block content %}
+
+  <p><a href="{% url 'gantt_chart:chart' %}">{{ task }}</a></p>
+
+  <p>Edit entry:</p>
+
+  <form action = "{% url "gantt_chart:edit_task" task.id %}" method = 'post'>
+    {%csrf_token%}
+    {{form.as_p}}
+    <button name = "submit">Save changes</button>
+  </form>
+
+{% endblock content %}

@@ -47,6 +47,12 @@ def chart(request):
     return render(request, 'chart.html', context)
 
 
+def task_list(request):
+    tasks = Task.objects.all()
+    context = {'tasks':tasks}
+    return render(request, 'gantt_chart/task_list.html', context)
+
+@login_required
 def add_task(request):
     if request.method != 'POST':
         form = NewTaskForm()
@@ -61,26 +67,22 @@ def add_task(request):
     context = {'new_task':form}
     return render(request, 'gantt_chart/add_task.html', context)
 
-""" class NewTask(CreateView):
-    model = Task
-    fields = '__all__'
-    template_name = 'add_task.html'
-    success_url = '/schedule/' """
 
-""" def edit_task(request, task_id):
-    #Choose the entry you want to edit
+
+def edit_task(request, task_id):
+    #Choose the task you want to edit
     task = Task.objects.get(id=task_id)
 
     if request.method != "POST":
-        form = EntryForm(instance=entry)
+        form = NewTaskForm(instance=task)
     else: 
-        form = EntryForm(instance=entry, data = request.POST)
+        form = NewTaskForm(instance=task, data = request.POST)
         if form.is_valid():
             form.save()
-            return redirect('learning_logs:topic', topic_id=topic.id)
+            return redirect('gantt_chart:chart')
         
-    context = {'entry': entry, 'topic':topic, 'form':form}
-    return render(request, 'learning_logs/edit_entry.html', context) """
+    context = {'task':task, 'form':form}
+    return render(request, 'gantt_chart/edit_task.html', context)
     
 
 
