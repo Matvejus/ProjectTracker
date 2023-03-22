@@ -1,12 +1,14 @@
 {% extends 'gantt_chart/base.html' %}
+{% load bootstrap5 %}
+
 {% block header %}
 <h1>Tasks</h1>
 {% endblock header %}
 
 {% block content %}
-<ul>
+<ul class="list-group">
 {% for task in tasks %}
-    <li><a href = "{% url "gantt_chart:edit_task" task.id%}">    
+    <li class="list-group-item"><a href = "{% url "gantt_chart:edit_task" task.id%}">    
         {{ task.name }} - {{ task.responsible }} - {{ task.end_date|date }}</a></li>
 {% empty %}
     <li>No tasks to do.</li>

@@ -1,0 +1,19 @@
+{% extends 'gantt_chart/base.html' %}
+{% comment %} {% load 'bootstrap5' %} {% endcomment %}
+{% block header %}
+<div class="container" style="max-width:600px">
+		<div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+			<h1 class="display-4">My tasks</h1>
+        </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<ul>
+{% for task in my_tasks %}  
+       <li class="list-group-item"> {{ task.name }} | {{ task.start_date|date }} - {{ task.end_date|date }}</a></li>
+{% empty %}
+    <li>No tasks to do.</li>
+{% endfor %}
+</ul>
+{% endblock content %}
