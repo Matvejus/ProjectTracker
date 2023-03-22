@@ -89,3 +89,5 @@ def my_tasks(request):
     context = {'my_tasks':tasks}
     return render(request, 'gantt_chart/my-tasks.html', context)    
     
+def comment(request):
+    print("test")
