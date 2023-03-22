@@ -88,9 +88,4 @@ def my_tasks(request):
     tasks = Task.objects.filter(responsible = request.user).order_by('end_date')
     context = {'my_tasks':tasks}
     return render(request, 'gantt_chart/my-tasks.html', context)    
-
-
-
-
-
     
