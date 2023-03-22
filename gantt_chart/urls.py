@@ -11,3 +11,5 @@ urlpatterns = [
     path('tasks/', views.task_list, name = "task_list"),
     path('my-tasks/', views.my_tasks, name = 'my_tasks'),
 ]
+
+#this is a test
