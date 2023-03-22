@@ -91,3 +91,5 @@ def my_tasks(request):
 
 
     
+def comment(request):
+    print("test")
