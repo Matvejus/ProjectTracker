@@ -21,3 +21,5 @@ urlpatterns = [
     path("", include('gantt_chart.urls')),
     path("users/", include('users.urls'))
 ]
+
+#kjksajdklfjaskdf
