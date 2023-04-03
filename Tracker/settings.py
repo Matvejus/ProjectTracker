@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     #my apps:
     'gantt_chart',
     'users',
+    'bootstrap5',
 
     #Django apps
     'django.contrib.admin',
@@ -45,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-    'bootstrap5',
+    
     #3rd party apps:
     
 ]
